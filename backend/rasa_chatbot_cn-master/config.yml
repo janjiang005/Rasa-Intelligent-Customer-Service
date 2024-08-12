@@ -1,0 +1,45 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: zh
+
+pipeline:
+  # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
+  # # If you'd like to customize it, uncomment and adjust the pipeline.
+  # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
+#  - name: compoments.nlu.helpers.correction.TextCorrection # 文本纠错 Component
+  - name: compoments.nlu.tokenizers.bert_tokenizer.CustomBertTokenizer
+    cache_dir: ./tmp
+    model_weights: /home/caiqing/ssd1/jan/rasa/backend/rasa_chatbot_cn-master/model/bert
+  - name: compoments.nlu.featurizer.lm_featurizer.OnnxLanguageModelFeaturizer
+    cache_dir: ./tmp
+    model_name: bert
+    model_weights: /home/caiqing/ssd1/jan/rasa/backend/rasa_chatbot_cn-master/model/bert
+    onnx: false  # 因为有依赖，默认未开启
+    quantize: false
+  - name: DIETClassifier
+    epochs: 100
+  - name: RegexEntityExtractor
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+    retrieval_intent: nlu
+  - name: FallbackClassifier
+    threshold: 0.3
+    ambiguity_threshold: 0.1
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+   - name: AugmentedMemoizationPolicy
+   - name: TEDPolicy
+     max_history: 5
+     epochs: 100
+   - name: compoments.polices.ask_again_policy.AskAgainRulePolicy
+     core_fallback_threshold: 0.5
+     ask_again_intent: "再问一次"
+     need_ask_again_intents:
+      - ask_order_status
+

@@ -1,0 +1,84 @@
+.taskcenter {
+    width: 100%;
+    height: 80%;
+    min-height: 800px;
+    padding-top: 10px;
+    /* background-color: black; */
+    background-color: #e6edf2;
+
+    overflow: hidden;
+    padding-bottom: 1%;
+}
+.content2 {
+    width: 93%;
+    /* margin: 10px auto; */
+    margin: auto;
+    background-color: white;
+    min-height: 800px;
+}
+.back2 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.tabtop13 {
+    margin: auto;
+    width: 98%;
+}
+.tabtop13 td {
+    background-color: #ffffff;
+    height: 25px;
+    line-height: 150%;
+}
+.font-center {
+    text-align: center;
+}
+.btbg {
+    background: #e9faff !important;
+}
+.btbg1 {
+    background: #f2fbfe !important;
+}
+.btbg2 {
+    background: #f3f3f3 !important;
+}
+.biaoti {
+    font-family: 微软雅黑;
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: 1px dashed #cccccc;
+    color: #255e95;
+}
+.titfont {
+    font-family: 微软雅黑;
+    font-size: 24px;
+    font-weight: bold;
+    color: #255e95;
+    background: no-repeat 15px center;
+    background-color: #e9faff;
+}
+.tabtxt2 {
+    font-family: 微软雅黑;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    color: #327cd1;
+}
+.tabtxt3 {
+    font-family: 微软雅黑;
+    font-size: 14px;
+    padding-left: 15px;
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+.tabone {
+    height: 60px;
+}
+.Pagination {
+    width: 95%;
+    margin: auto;
+    padding-bottom: 3%;
+}
+

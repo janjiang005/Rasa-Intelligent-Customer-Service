@@ -1,0 +1,100 @@
+.Test_upload {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    background-color: white;
+    min-height: 780px;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.content3 {
+    width: 85%;
+    height: auto;
+    background-color: white;
+    margin: 20px auto;
+    min-height: 780px;
+    padding-bottom: 30px;
+}
+.content3 h2 {
+    margin-left: 7%;
+    padding-top: 25px;
+    padding-bottom: 2%;
+}
+.border {
+    /* background-color: red; */
+    width: 86%;
+    height: 20%;
+    min-height: 80px;
+    margin: 3% auto;
+    border-radius: 10px;
+    border: #e3eef6 2px dashed;
+}
+.input-box {
+    width:86%;
+    margin:3% auto;
+}
+.tooltip {
+    font-size: 24px;
+    margin: auto;
+    width: 24%;
+    margin-top: 23px;
+    color: #a9b2b8;
+    font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
+
+    text-align: center;
+}
+.Audio_all {
+    /* display: flex; */
+}
+.Audio_one {
+    margin: 2%;
+    position: relative;
+    width: 50%;
+    height: 40px;
+    /* height: 70%; */
+    /* background-color: red; */
+}
+audio {
+    width: 100%;
+    height: 100%;
+}
+.el_form_item {
+    width: 40%;
+    padding-top: 2%;
+}
+.pic {
+    margin-left: 7%;
+}
+
+.Up_progress_icon {
+    display: flex;
+    /*实现垂直居中*/
+    align-items: center;
+    /*实现水平居中*/
+    justify-content: center;
+}
+h1 {
+    font-size: 80px;
+    padding: 0;
+}
+img {
+    width: 150px;
+    height: 150px;
+}
+.Up_progress_word {
+    display: flex;
+    /*实现垂直居中*/
+    align-items: center;
+    /*实现水平居中*/
+    justify-content: center;
+    font-size: 26px;
+}
+.dialog-body {
+    padding: 0;
+}
+
+.avatar {
+    width: 100%;
+    height: 30px;
+}

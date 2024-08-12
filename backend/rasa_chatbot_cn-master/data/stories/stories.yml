@@ -1,0 +1,57 @@
+version: "2.0"
+
+# 根据问题分类，判断不同用户意图对应的动作
+
+stories:
+
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: provide order status
+    steps:
+      - intent: provide_order_status
+        entities:
+            - order_id: "SF12345"  # 这里用于测试，实际中由用户输入
+      - action: action_provide_order_status
+      - intent: provide_user_type
+        entities:
+            - user_type: "收件"
+      - action: action_provide_user_type
+      - action: action_provide_top_questions
+      - intent: select_question
+        entities:
+          - selected_question: "我包裹丢了怎么办？"
+      - action: action_handle_selection
+      - action: action_update_selected
+      - action: action_handle_select_question
+
+  - story: ask questions
+    steps:
+      - intent: ask_question
+        entities:
+          - user_question: "我包裹丢了怎么办？"
+      - action: action_analyze_emotion
+      - action: action_update_user
+      - action: action_handle_user_question
+
+rules:
+
+  - rule: Handle asking question anytime
+    steps:
+      - intent: ask_question
+      - action: action_analyze_emotion
+      - action: action_update_user
+      - action: action_handle_user_question
+
+  - rule: Handle selecting question
+    steps:
+      - intent: select_question
+      - action: action_handle_selection
+      - action: action_update_selected
+      - action: action_handle_select_question
+
+
+
+

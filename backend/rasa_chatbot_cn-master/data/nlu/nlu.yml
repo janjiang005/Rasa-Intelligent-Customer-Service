@@ -1,0 +1,59 @@
+version: "2.0"
+
+#用户意图
+
+nlu:
+
+  - intent: goodbye
+    examples: |
+      - 再见
+      - 拜拜
+      - 结束
+      - 没问题了
+
+  - intent: provide_order_status
+    examples: |
+      - 我的订单号是[SF12345](order_id)
+      - 查一下订单 [SF12345](order_id) 的状态
+      - 请帮我查询订单 [SF12345](order_id)
+      - 我想知道订单 [SF12345](order_id) 的状态
+      - [SF12345](order_id)
+      - SF12345(order_id)
+      - 订单号是 [SF12345](order_id)
+      - [SF12345](order_id) 的状态是什么
+      - 查询订单 [SF12345](order_id)
+      - [sf12345](order_id)
+      - [12345](order_id)
+      - [sdfsdf](order_id)
+      - [eerereerwer3253454](order_id)
+
+
+  - intent: provide_user_type
+    examples: |
+      - 我是[收件](user_type)人
+      - [收件](user_type)
+      - 我要[收件](user_type)
+      - 我[收件](user_type)的
+      - 我是[寄件](user_type)人
+      - [寄件](user_type)
+      - 我要[寄件](user_type)
+      - 我[寄件](user_type)的
+
+#  - intent: select_question
+#    examples: |
+#      - [丢件了怎么办？](selected_question)
+#      - [快递员不配送怎么办？](selected_question)
+#      - [一直是揽收中怎么办？](selected_question)
+#      - [我快递一直没动呢？](selected_question)
+#      - [我快递到哪了？](selected_question)
+#      - [怎么还不配送过来？](selected_question)
+
+  - intent: ask_question
+    examples: |
+      - [丢件了怎么办？](user_question)
+      - [快递员不配送怎么办？](user_question)
+      - [一直是揽收中怎么办？](user_question)
+      - [我快递一直没动呢？](user_question)
+      - [我快递到哪了？](user_question)
+      - [怎么还不配送过来？](user_question)
+

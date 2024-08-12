@@ -1,0 +1,76 @@
+version: "2.0"
+
+intents:
+  - goodbye
+  - provide_order_status
+  - ask_general_info
+  - ask_user_type
+  - provide_user_type
+  - provide_receiver
+  - provide_sender
+  - ask_question
+  - select_question
+  - provide_general_info
+
+entities:
+  - order_id
+  - item_status
+  - province
+  - city
+  - user_type
+  - selected_question
+  - emotion
+  - context
+  - user_info
+  - user_question
+
+
+
+slots:
+  order_id:
+    type: text
+  user_type:
+    type: text
+  province:
+    type: text
+  city:
+    type: text
+  selected_question:
+    type: text
+  emotion:
+    type: text
+  context:
+    type: text
+  user_info:
+    type: text
+  user_question:
+    type: text
+
+
+
+
+actions:
+  - action_provide_user_type
+  - action_provide_order_status
+  - action_provide_top_questions
+  - action_handle_select_question
+  - action_analyze_emotion
+  - action_update_user
+  - action_handle_selection
+  - action_handle_user_question
+  - action_update_selected
+
+responses:
+
+  utter_goodbye:
+    - text: "小主有什么需要请随时召唤喵喵哦，期待与小主的下次相遇❤"
+  utter_ask_general_info:
+    - text: "小主请提供您的订单号呢，以便喵喵可以查询订单状态。"
+  utter_ask_user_type:
+    - text: "请问小主是收件人还是寄件人呢？"
+  utter_provide_order_status:
+    - text: "订单{order_id}的状态是:{item_status}"
+  utter_ask_user_question:
+    - text: "请小主详细描述一下问题哦，喵喵这就来帮你解答！"
+
+

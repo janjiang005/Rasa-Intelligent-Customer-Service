@@ -1,0 +1,16 @@
+transformers==4.34.1
+requests==2.25.1
+cpca==0.5.5
+validators==0.18.2
+aiohttp==3.6.3
+matplotlib==3.3.3
+pytz==2020.4
+rasa==2.8.12
+rasa-sdk==2.8.1
+sentence-transformers==2.2.2
+torch==1.10.0
+torchvision==0.11.1
+torchaudio==0.10.0
+tensorflow==2.6.0
+protobuf==3.20.3
+keras==2.6.0

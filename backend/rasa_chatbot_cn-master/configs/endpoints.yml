@@ -1,0 +1,36 @@
+#action_endpoint:
+#  url: http://localhost:5005/webhook
+
+# tracker_store:
+#   store_type: mongod
+#   url: mongodb://mongo:27017
+#   db: chatbot
+
+recipe: default.v1
+assistant_id: 20231004-111353-furious-ion
+language:  zh  #中文
+
+pipeline:
+- name: JiebaTokenizer   #选择分词器名称
+- name: RegexFeaturizer   #用于实体提取和意图分类的特征
+  "use_word_boundaries": True
+- name: LexicalSyntacticFeaturizer #特征提取层
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 150
+  constrain_similarities: true
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 100
+  constrain_similarities: true
+- name: FallbackClassifier
+  threshold: 0.3
+  ambiguity_threshold: 0.1
+
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+  - name: RulePolicy
